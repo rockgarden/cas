@@ -26,7 +26,7 @@
 	</bean>
 
 	<!-- pac4j configurations -->
-	<!-- 请求cas服务端配置 -->
+	<!-- cas服务端配置 -->
 	<bean id="casConfig" class="org.pac4j.cas.config.CasConfiguration">
 		<!-- CAS server登录链接 -->
 		<property name="loginUrl" value="${sso.cas.server.loginUrl}"></property>
@@ -35,7 +35,6 @@
 		<!-- 登出处理器，单点登出时所需要的操作在这里实现-->
 		<property name="logoutHandler" ref="casLogoutHandler"></property>
 	</bean>
-
 	<!-- cas客户端配置 -->
 	<bean id="casClient" class="com.pac4j.client.MyCasClient">
 		<constructor-arg ref="casConfig" />
